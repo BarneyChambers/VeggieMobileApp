@@ -13,10 +13,10 @@ namespace VeggieMobile21062018
      * 
      *  Example Usage:
      *  ReceiveQRStringParser receive = new ReceiveQRStringParser("bitcoin:P9UbvDiH95NRyfqPpXqwx9Be5Pun4CeV25?amount=444.66600000&label=This%20is%20an%20example%20label&message=An%20Example%20Message");
-	 *	Console.WriteLine("Address is: " + receive.GetAddress());
-	 *	Console.WriteLine("Amount is: " + receive.GetAmount());
-	 *	Console.WriteLine("Label is: " + receive.GetLabel());
-	 *	Console.WriteLine("Message is: " + receive.GetMessage());
+     *	Console.WriteLine("Address is: " + receive.GetAddress());
+     *	Console.WriteLine("Amount is: " + receive.GetAmount());
+     *	Console.WriteLine("Label is: " + receive.GetLabel());
+     *	Console.WriteLine("Message is: " + receive.GetMessage());
      *
      */
 
