@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VeggieMobile21062018"
+             x:Class="VeggieMobile21062018.MainPage">
+
+    <!-- Place new controls here -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.ColumnSpan="3" VerticalOptions="Start">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="Transaction History" HorizontalOptions="Center" FontAttributes="Bold" FontSize="14"/>
+            <ListView Grid.Row="1" x:Name="transactionList" VerticalOptions="Start" Margin="5" />
+        </Grid>
+        <Button
+            Grid.Row="0"
+            Grid.Column="0"
+            Image="bestburg.png"
+            HeightRequest="50"
+            WidthRequest="50"
+            Margin="0, 0, 20, 0"
+            HorizontalOptions="Start"
+            />
+        <Image
+            Grid.Row="0"
+            Grid.Column="1"
+            HeightRequest="50"
+            WidthRequest="50"
+            Source="Veggielogo.png"
+            VerticalOptions="Start"
+            HorizontalOptions="Center"
+            />
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="21"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label
+                Margin="0,5,0,0"
+                Grid.Row="0"
+                Text="0.00 VEGI"
+                FontAttributes="Bold"
+                VerticalOptions="End"
+                HorizontalOptions="Center"
+            />
+            <Label
+                FontSize="8"
+                Grid.Row="1"
+                Text="0.00 USD"
+                FontAttributes="Bold"
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+            />
+        </Grid>
+
+
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Clicked="SendPageClicked"
+            VerticalOptions="End"
+            HorizontalOptions="End"
+            Image="QRFA.png"
+            HeightRequest="60"
+            WidthRequest="60"
+            Margin="3"
+            />
+
+
+        <Button 
+            x:Name="receiveButton"
+            Text="Receive"
+            Grid.Row="2"
+            Grid.Column="0"
+            Clicked="ReceivePageClicked"
+            HorizontalOptions="Start"
+            VerticalOptions="FillAndExpand"
+            Margin="3"
+            />
+
+
+        <Button
+            Text="Send"
+            Grid.Row="2"
+            Grid.Column="2"
+            Clicked="SendPageClicked"
+            HorizontalOptions="End"
+            VerticalOptions="FillAndExpand"
+            Margin="3"
+            />
+
+
+
+    </Grid>
+
+</ContentPage>

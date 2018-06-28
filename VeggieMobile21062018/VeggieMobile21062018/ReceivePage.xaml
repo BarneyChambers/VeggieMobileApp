@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="VeggieMobile21062018.ReceivePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+            <Entry 
+                Grid.Row="0"
+                x:Name="txtBarcode"
+                Placeholder="Label"
+               />
+            <Entry 
+                Grid.Row="1"
+                x:Name="amountTxt"
+                Placeholder="Amount"
+               />
+            <Entry 
+                Grid.Row="2"
+                x:Name="msgText"
+                Placeholder="Message"
+               />
+            <Button
+                VerticalOptions="End"
+                Grid.Row="3"
+                x:Name="btnScan"
+                Clicked="btnReceive_Clicked"
+                Text="Generate QR code"
+            />
+            <forms:ZXingBarcodeImageView
+                IsVisible="False"
+                x:Name="QRCodeView"
+                BarcodeValue="-1"
+                Grid.Row="4"
+                HeightRequest="100" WidthRequest="100"
+                />
+
+
+        </Grid>
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>
+
