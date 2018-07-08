@@ -13,8 +13,7 @@
 namespace VeggieMobile21062018 {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018\\Inf" +
-        "oPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018\\InfoPage.xaml")]
     public partial class InfoPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

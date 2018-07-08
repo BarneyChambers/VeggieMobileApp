@@ -4133,11 +4133,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018.Android\\VeggieMobile21062018.Android.csproj",
+      "projectUniqueName": "D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018.Android\\VeggieMobile21062018.Android.csproj",
       "projectName": "VeggieMobile21062018.Android",
-      "projectPath": "D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018.Android\\VeggieMobile21062018.Android.csproj",
+      "projectPath": "D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018.Android\\VeggieMobile21062018.Android.csproj",
       "packagesPath": "C:\\Users\\Barne\\.nuget\\packages\\",
-      "outputPath": "D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018.Android\\obj\\",
+      "outputPath": "D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

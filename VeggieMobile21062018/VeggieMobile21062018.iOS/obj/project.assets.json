@@ -5632,11 +5632,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018.iOS\\VeggieMobile21062018.iOS.csproj",
+      "projectUniqueName": "D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018.iOS\\VeggieMobile21062018.iOS.csproj",
       "projectName": "VeggieMobile21062018.iOS",
-      "projectPath": "D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018.iOS\\VeggieMobile21062018.iOS.csproj",
+      "projectPath": "D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018.iOS\\VeggieMobile21062018.iOS.csproj",
       "packagesPath": "C:\\Users\\Barne\\.nuget\\packages\\",
-      "outputPath": "D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018.iOS\\obj\\",
+      "outputPath": "D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

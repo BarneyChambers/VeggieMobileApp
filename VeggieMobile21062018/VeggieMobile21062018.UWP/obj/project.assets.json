@@ -18116,11 +18116,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018.UWP\\VeggieMobile21062018.UWP.csproj",
+      "projectUniqueName": "D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018.UWP\\VeggieMobile21062018.UWP.csproj",
       "projectName": "VeggieMobile21062018.UWP",
-      "projectPath": "D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018.UWP\\VeggieMobile21062018.UWP.csproj",
+      "projectPath": "D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018.UWP\\VeggieMobile21062018.UWP.csproj",
       "packagesPath": "C:\\Users\\Barne\\.nuget\\packages\\",
-      "outputPath": "D:\\Xamarin App\\VeggieMobile21062018\\VeggieMobile21062018\\VeggieMobile21062018.UWP\\obj\\",
+      "outputPath": "D:\\VeggieMobileApp\\VeggieMobile21062018\\VeggieMobile21062018.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -18201,17 +18201,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "runtime.native.System.IO.Compression 4.3.0 depends on runtime.win10-arm64.runtime.native.System.IO.Compression (>= 4.3.0) but runtime.win10-arm64.runtime.native.System.IO.Compression 4.3.0 was not found. An approximate best match of runtime.win10-arm64.runtime.native.System.IO.Compression 4.3.1 was resolved.",
-      "libraryId": "runtime.win10-arm64.runtime.native.System.IO.Compression",
-      "targetGraphs": [
-        "UAP,Version=v10.0.16299/win10-arm64-aot"
-      ]
-    }
-  ]
+  }
 }

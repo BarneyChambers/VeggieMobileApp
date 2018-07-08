@@ -36,7 +36,7 @@ namespace VeggieMobile21062018
             return "-1";
         }
 
-        public async Task<string> BlockchainSendToAddress()
+        public async Task<string> BlockchainSendToAddress(string address, string amount, string comment)
         {
             try
             {
@@ -44,7 +44,22 @@ namespace VeggieMobile21062018
                 client.MaxResponseContentBufferSize = 256000;
                 var serverUri = new Uri(serverIP);
                 var relativeUri = new Uri(sendToAddressPath, UriKind.Relative);
+                var addressUri = new Uri(address, UriKind.Relative);
+                var amountUri = new Uri(amount, UriKind.Relative);
+                var commentUri = new Uri(comment, UriKind.Relative);
                 Uri fullUri = new Uri(serverUri, relativeUri);
+
+                if (!String.IsNullOrEmpty(address) && !String.IsNullOrEmpty(amount))
+                {
+                    fullUri = new Uri(fullUri, addressUri);
+                    fullUri = new Uri(fullUri, amountUri);
+                    Console.WriteLine(fullUri.ToString());
+                }
+                else
+                {
+                    return "You need to specify an address and an amount";
+                }
+
                 //TODO: add account?=XYZ
                 var response = await client.GetAsync(fullUri);
                 if (response.IsSuccessStatusCode)

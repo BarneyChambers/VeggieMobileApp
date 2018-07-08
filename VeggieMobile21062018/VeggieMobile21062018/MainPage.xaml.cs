@@ -38,9 +38,17 @@ namespace VeggieMobile21062018
 
         async void GetInfo()
         {
-            APICommunicator a = new APICommunicator();
-            string s = await a.BlockchainGetInfo();
-            GetInfoObj g = getInfoDeserialized(s);
+            try
+            {
+                APICommunicator a = new APICommunicator();
+                string s = await a.BlockchainGetInfo();
+                GetInfoObj g = getInfoDeserialized(s);
+            }
+            catch (Exception e)
+            {
+                await DisplayAlert("Oops!", "Failed to connect, please try again later.", "Ok");
+            }
+
         }
         GetInfoObj getInfoDeserialized(string s)
         {
