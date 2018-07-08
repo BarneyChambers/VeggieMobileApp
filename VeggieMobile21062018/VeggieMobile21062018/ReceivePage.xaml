@@ -13,39 +13,49 @@
                 <RowDefinition Height="*"/>
 
                 <RowDefinition/>
-
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
             <Entry 
                 Grid.Row="0"
+                Grid.Column="0"
+                x:Name="amountTxt"
+                Placeholder="0.00 VEGI"
+                TextChanged="MyEntryChanged"
+               />
+            <Entry
+                Grid.Row="0"
+                Grid.Column="1"
+                x:Name="amountUSD"
+                Placeholder="$0.00"
+                TextChanged="MyEntryChanged"
+                />
+            <Entry 
+                Grid.Row="1"
+                Grid.Column="0"
                 x:Name="txtBarcode"
                 Placeholder="Label"
+                TextChanged="MyEntryChanged"
                />
             <Entry 
                 Grid.Row="1"
-                x:Name="amountTxt"
-                Placeholder="Amount"
-               />
-            <Entry 
-                Grid.Row="2"
+                Grid.Column="1"
                 x:Name="msgText"
                 Placeholder="Message"
+                TextChanged="MyEntryChanged"
+
                />
-            <Button
-                VerticalOptions="End"
-                Grid.Row="3"
-                x:Name="btnScan"
-                Clicked="btnReceive_Clicked"
-                Text="Generate QR code"
-            />
             <forms:ZXingBarcodeImageView
                 IsVisible="False"
                 x:Name="QRCodeView"
                 BarcodeValue="-1"
-                Grid.Row="4"
+                Grid.Row="2"
+                Grid.RowSpan="3"
+                Grid.Column="0"
                 HeightRequest="100" WidthRequest="100"
                 />
-
-
         </Grid>
 
 

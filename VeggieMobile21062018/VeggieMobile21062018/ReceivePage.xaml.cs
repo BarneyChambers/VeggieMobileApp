@@ -19,47 +19,56 @@ namespace VeggieMobile21062018
         {
             InitializeComponent();
             address = receiveAddress;
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
-
-        private async void btnReceive_Clicked(object sender, EventArgs e)
+        async Task<string> SetQrContent()
         {
-            QRCodeView.IsVisible = true;
-
-            QRCodeView = new ZXingBarcodeImageView
-            {
-                BarcodeFormat = BarcodeFormat.QR_CODE,
-                BarcodeOptions = new QrCodeEncodingOptions
-                {
-                    Height = 150,
-                    Width = 150,
-                    PureBarcode = true
-                },
-                BarcodeValue = SetQrContent(),
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                HorizontalOptions = LayoutOptions.CenterAndExpand
-            };
-            
-        }
-
-        string SetQrContent()
-        {
-            string QrContent="Bitcoin:"+address;
-            if (amountTxt.Text != "")
+            string QrContent = "Bitcoin:" + address;
+            if (amountTxt.Text != null)
             {
                 QrContent += "?amount=" + addSigFigs(amountTxt.Text);
-                
+
             }
-            if (txtBarcode.Text != "")
+            if (txtBarcode.Text != null)
             {
                 QrContent += "&label=" + txtBarcode.Text;
             }
-            if (msgText.Text != "")
+            if (msgText.Text != null)
             {
                 QrContent += "&message=" + msgText.Text;
             }
             Console.WriteLine(QrContent);
             return QrContent;
         }
+
+        async void MyEntryChanged(TextChangedEventArgs e)
+        {
+            //string bv = await SetQrContent();
+
+
+                //QRCodeView = null;
+                QRCodeView = new ZXingBarcodeImageView
+                {
+                    BarcodeFormat = BarcodeFormat.QR_CODE,
+                    BarcodeOptions = new QrCodeEncodingOptions
+                    {
+                        Height = 150,
+                        Width = 150,
+                        PureBarcode = true
+                    },
+                    
+
+                    VerticalOptions = LayoutOptions.CenterAndExpand,
+                    HorizontalOptions = LayoutOptions.CenterAndExpand
+                };
+                QRCodeView.IsVisible = true;
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                QRCodeView.BarcodeValue = await SetQrContent();
+            });
+        }
+
 
         public static String addSigFigs(String str)
         {

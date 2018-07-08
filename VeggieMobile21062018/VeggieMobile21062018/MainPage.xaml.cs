@@ -1,4 +1,6 @@
 ﻿using NBitcoin;
+using NBitcoin.RPC;
+using QBitNinja.Client;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Newtonsoft.Json;
 
 namespace VeggieMobile21062018
 {
@@ -14,24 +17,35 @@ namespace VeggieMobile21062018
         string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
         Network network = NBitcoin.Altcoins.Veggiecoin.Instance.Mainnet;
         Key key;
+        GetInfoObj getInfoObj;
         public MainPage()
 		{
 			InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-
-            //string address = key.PubKey.GetAddress(network).ToString();
+            GetInfo();
             //Console.WriteLine(key.PubKey.GetAddress(network));
             //Console.WriteLine(key.GetBitcoinSecret(network));
             //Console.WriteLine("BITCOIN SECRET: " + key.GetWif(network).ToString() + "\n");
             key = GetKeyFromWif();
-            
+            var address = key.PubKey.GetAddress(network);
+
             if (transactionList.ItemsSource == null)
             {
-                transactionList.ItemsSource = new List<string> { "Sent: 0.65900000 PET4MehsrcbsjXU5zGZkHWyjNzw7xxnHAt", "Received: 5.99340000 PS4YhHyUMEkUyiSbSoLQyvaGapWcsaK1Au", "Sent: 32.594485711 PSYjCLMHMoiHaPihNBGCcz3CG5zVUHF875", "Sent: 0.00000001 PMesDYjayZvA4ex3aTwNa61fZ3zJeUt3By", ""};
+                transactionList.ItemsSource = new List<string> {"No transactions found.","","","",""};
                 transactionList.IsEnabled = false;
             }
         }
 
+        async void GetInfo()
+        {
+            APICommunicator a = new APICommunicator();
+            string s = await a.BlockchainGetInfo();
+            GetInfoObj g = getInfoDeserialized(s);
+        }
+        GetInfoObj getInfoDeserialized(string s)
+        {
+            return JsonConvert.DeserializeObject<GetInfoObj>(s);
+        }
 
         //Gets the WIF from the user's mobile phone at wif.txt. If it doesn't exist, make a new wif.
         Key GetKeyFromWif()
@@ -74,6 +88,14 @@ namespace VeggieMobile21062018
         void SendPageClicked(EventArgs e)
         {
             Navigation.PushAsync(new SendPage());
+        }
+        async void SettingPageClicked(EventArgs e)
+        {
+            APICommunicator a = new APICommunicator();
+            string s = await a.BlockchainGetInfo();
+            GetInfoObj g = getInfoDeserialized(s);
+
+            await Navigation.PushAsync(new InfoPage(g));
         }
     }
 }
