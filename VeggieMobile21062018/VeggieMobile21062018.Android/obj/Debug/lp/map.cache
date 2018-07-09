@@ -35,3 +35,6 @@ ZXingNetMobile
 netstandard
 QBitNinja.Client
 System.Reflection.Extensions
+BottomBar.Droid
+BottomBar.XamarinForms
+BottomNavigationBar

@@ -1,4 +1,7 @@
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\android\assets\VeggieMobile21062018.Android.dll
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\android\assets\BottomBar.Droid.dll
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\android\assets\BottomBar.XamarinForms.dll
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\android\assets\BottomNavigationBar.dll
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\android\assets\FastAndroidCamera.dll
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\android\assets\FormsViewGroup.dll
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\android\assets\Java.Interop.dll

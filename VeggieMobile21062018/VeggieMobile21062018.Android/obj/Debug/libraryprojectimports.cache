@@ -23,6 +23,8 @@
     <Jar>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\9\jl\bin\classes.jar</Jar>
   </Jars>
   <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\37\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\39\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\0\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\11\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\14\jl\res</ResolvedResourceDirectory>
@@ -37,6 +39,8 @@
     <ResolvedResourceDirectory>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\33\jl\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Debug\lp\37\jl\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\lp\39\jl\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\lp\0\jl\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\lp\18\jl\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\lp\30\jl\assets</ResolvedAssetDirectory>
@@ -44,6 +48,8 @@
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\37.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\39.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\0.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\11.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\lp\14.stamp</ResolvedResourceDirectoryStamp>

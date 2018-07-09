@@ -33,6 +33,7 @@
       <DependentUpon>SendPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)transactionItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Veggiecoin.cs" />
   </ItemGroup>
   <ItemGroup>

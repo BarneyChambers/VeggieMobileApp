@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v8.1": {
+      "BottomNavigationBar/1.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.3",
+          "Xamarin.Android.Support.Animated.Vector.Drawable": "23.3.0",
+          "Xamarin.Android.Support.Design": "23.3.0",
+          "Xamarin.Android.Support.Vector.Drawable": "23.3.0",
+          "Xamarin.Android.Support.v4": "23.3.0",
+          "Xamarin.Android.Support.v7.AppCompat": "23.3.0",
+          "Xamarin.Android.Support.v7.RecyclerView": "23.3.0"
+        },
+        "compile": {
+          "lib/MonoAndroid403/BottomNavigationBar.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/BottomNavigationBar.dll": {}
+        }
+      },
       "FastAndroidCamera/2.0.0": {
         "type": "package",
         "compile": {
@@ -593,6 +611,20 @@
           "lib/MonoAndroid10/_._": {}
         }
       },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BottomNavigationBar": "1.1.2"
+        },
+        "compile": {
+          "lib/MonoAndroid10/BottomBar.Droid.dll": {},
+          "lib/MonoAndroid10/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/BottomBar.Droid.dll": {},
+          "lib/MonoAndroid10/BottomBar.XamarinForms.dll": {}
+        }
+      },
       "Xamarin.Android.Arch.Core.Common/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -967,6 +999,17 @@
     }
   },
   "libraries": {
+    "BottomNavigationBar/1.1.2": {
+      "sha512": "HV5iFmTSMZo8UI98l82gQJ4zmtQ9GHhRqiczjc580byZWQpiBY9H3r5PtAPF8JFmYs0/jSImKbh8DXd8ncWcRg==",
+      "type": "package",
+      "path": "bottomnavigationbar/1.1.2",
+      "files": [
+        "bottomnavigationbar.1.1.2.nupkg.sha512",
+        "bottomnavigationbar.nuspec",
+        "lib/MonoAndroid403/BottomNavigationBar.dll",
+        "lib/MonoAndroid403/BottomNavigationBar.xml"
+      ]
+    },
     "FastAndroidCamera/2.0.0": {
       "sha512": "RQix6VHmVyQXVdP3Y4+Khw1F7HirONNCa5ubGng58gUkmSAhlS4t1Qf1Biyfakx/LjCYJ3SZ99rWSjQgV15uVQ==",
       "type": "package",
@@ -3687,6 +3730,19 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+      "sha512": "CAxjraz7v27mWxrChvLLggDRq5Icf3OA0IL3lpGY+rfUGH488kZzBB3WJmfbgh7q5yfBbva51Iuv4tFleepV2A==",
+      "type": "package",
+      "path": "thrivegmbh.bottomnavigationbar.xf/1.0.2",
+      "files": [
+        "lib/MonoAndroid10/BottomBar.Droid.dll",
+        "lib/MonoAndroid10/BottomBar.XamarinForms.dll",
+        "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll",
+        "lib/portable-net45+win8+wpa81/BottomBar.XamarinForms.dll",
+        "thrivegmbh.bottomnavigationbar.xf.1.0.2.nupkg.sha512",
+        "thrivegmbh.bottomnavigationbar.xf.nuspec"
+      ]
+    },
     "Xamarin.Android.Arch.Core.Common/1.0.0": {
       "sha512": "lBtubYSL6gKvHgg2ztIE3sg+kbR5/A/T5xXPaKSVWvYbMcjAUO8qwSyiAcvKS+caqraDOEDj0U3tocUmztgvhw==",
       "type": "package",
@@ -4117,6 +4173,7 @@
     "MonoAndroid,Version=v8.1": [
       "NBitcoin.Altcoins >= 1.0.1.9",
       "QBitNinja.Client >= 1.0.3.47",
+      "ThriveGmbH.BottomNavigationBar.XF >= 1.0.2",
       "Xamarin.Android.Support.Design >= 27.0.2",
       "Xamarin.Android.Support.v4 >= 27.0.2",
       "Xamarin.Android.Support.v7.AppCompat >= 27.0.2",
@@ -4167,6 +4224,10 @@
           "QBitNinja.Client": {
             "target": "Package",
             "version": "[1.0.3.47, )"
+          },
+          "ThriveGmbH.BottomNavigationBar.XF": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           },
           "Xamarin.Android.Support.Design": {
             "target": "Package",

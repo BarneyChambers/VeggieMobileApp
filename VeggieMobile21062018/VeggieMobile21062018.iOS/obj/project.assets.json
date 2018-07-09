@@ -584,6 +584,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        }
+      },
       "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "compile": {
@@ -1243,6 +1252,15 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
+        }
+      },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
         }
       },
       "Xamarin.Forms/3.1.0.583944": {
@@ -1906,6 +1924,15 @@
           "lib/xamarinios10/_._": {}
         }
       },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        }
+      },
       "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "compile": {
@@ -2565,6 +2592,15 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
+        }
+      },
+      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll": {}
         }
       },
       "Xamarin.Forms/3.1.0.583944": {
@@ -5427,6 +5463,19 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
+      "sha512": "CAxjraz7v27mWxrChvLLggDRq5Icf3OA0IL3lpGY+rfUGH488kZzBB3WJmfbgh7q5yfBbva51Iuv4tFleepV2A==",
+      "type": "package",
+      "path": "thrivegmbh.bottomnavigationbar.xf/1.0.2",
+      "files": [
+        "lib/MonoAndroid10/BottomBar.Droid.dll",
+        "lib/MonoAndroid10/BottomBar.XamarinForms.dll",
+        "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll",
+        "lib/portable-net45+win8+wpa81/BottomBar.XamarinForms.dll",
+        "thrivegmbh.bottomnavigationbar.xf.1.0.2.nupkg.sha512",
+        "thrivegmbh.bottomnavigationbar.xf.nuspec"
+      ]
+    },
     "Xamarin.Forms/3.1.0.583944": {
       "sha512": "q4AGFr8k9z6v5u++COV6M5TEZ8Oh8iiU3inVysapL5j75bhKfbcU2RizgZxTQ7+2CdlzVK+Dz+nyFx4JFh0Cwg==",
       "type": "package",
@@ -5621,6 +5670,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "NBitcoin.Altcoins >= 1.0.1.9",
       "QBitNinja.Client >= 1.0.3.47",
+      "ThriveGmbH.BottomNavigationBar.XF >= 1.0.2",
       "Xamarin.Forms >= 3.1.0.583944",
       "ZXing.Net.Mobile >= 2.4.1",
       "ZXing.Net.Mobile.Forms >= 2.4.1"
@@ -5666,6 +5716,10 @@
           "QBitNinja.Client": {
             "target": "Package",
             "version": "[1.0.3.47, )"
+          },
+          "ThriveGmbH.BottomNavigationBar.XF": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

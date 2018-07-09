@@ -216,6 +216,16 @@ D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\l
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\linksrc\System.Xml.pdb
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\linksrc\Xamarin.Forms.Core.pdb
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\linksrc\Xamarin.Forms.Xaml.pdb
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable\cogfa.png
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable\homefa.png
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable\paperplanefa.png
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable\scanfa.png
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable-xhdpi\cogfa.png
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable-xhdpi\homefa.png
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable-xhdpi\paperplanefa.png
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable-xhdpi\qrfa.png
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable-xhdpi\scanfa.png
+D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\res\drawable-xhdpi\veggielogo.png
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\bin\Debug\VeggieMobile21062018.Android.dll
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\linksrc\VeggieMobile21062018.Android.dll.mdb
 D:\VeggieMobileApp\VeggieMobile21062018\VeggieMobile21062018.Android\obj\Debug\linksrc\FormsViewGroup.dll.mdb

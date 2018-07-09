@@ -107,6 +107,9 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "VeggieMobile21062018.Android.dll" comes first in this list. */
 		"VeggieMobile21062018.Android.dll",
+		"BottomBar.Droid.dll",
+		"BottomBar.XamarinForms.dll",
+		"BottomNavigationBar.dll",
 		"FastAndroidCamera.dll",
 		"FormsViewGroup.dll",
 		"NBitcoin.Altcoins.dll",

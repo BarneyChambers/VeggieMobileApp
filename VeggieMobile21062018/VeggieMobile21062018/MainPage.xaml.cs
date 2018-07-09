@@ -28,10 +28,18 @@ namespace VeggieMobile21062018
             //Console.WriteLine("BITCOIN SECRET: " + key.GetWif(network).ToString() + "\n");
             key = GetKeyFromWif();
             var address = key.PubKey.GetAddress(network);
-
+            
             if (transactionList.ItemsSource == null)
             {
-                transactionList.ItemsSource = new List<string> {"No transactions found.","","","",""};
+                List <transactionItem> l = new List<transactionItem>();
+
+                l.Add(new transactionItem {
+                    imageSource = "paperplaneFA.png",
+                    status = "Sent",
+                    amount = "-502.2357"+" VEGI",
+                    timeOfTransaction = "a few seconds ago"
+                });
+                transactionList.ItemsSource = l;
                 transactionList.IsEnabled = false;
             }
         }
