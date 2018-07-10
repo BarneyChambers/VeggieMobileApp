@@ -14,6 +14,15 @@ namespace VeggieMobile21062018
             InitializeComponent();
 
         }
+
+        void TrimAmountEntry()
+        {
+            if (!amountEntry.Text.Contains("V"))
+            {
+                amountEntry.Text = "V" + amountEntry.Text;
+            }
+        }
+
         async void scanButtonClicked()
         {
             try

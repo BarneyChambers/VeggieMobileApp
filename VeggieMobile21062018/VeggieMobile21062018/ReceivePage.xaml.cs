@@ -1,72 +1,150 @@
 ﻿using System;  
-using System.Collections.Generic;  
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;  
 using System.Text;  
 using System.Threading.Tasks;
 using VeggieMobile21062018;
 using Xamarin.Forms;
 using ZXing;
+using ZXing.Common;
+using ZXing.Mobile;
+using ZXing.Net.Mobile;
 using ZXing.Net.Mobile.Forms;
 using ZXing.QrCode;
 
 namespace VeggieMobile21062018
 {
-    public partial class ReceivePage : ContentPage
+    public partial class ReceivePage : ContentPage, INotifyPropertyChanged
     {
-        private string codeValue= "-1";
         public string address;
+        private Random _random = new Random();
+        private string _barcodeValue = "-1";
+
+        public string BarcodeValue
+        {
+            get { return _barcodeValue; }
+            set
+            {
+
+                _barcodeValue = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BarcodeValue)));
+            }
+        }
+
+        public new event PropertyChangedEventHandler PropertyChanged;
+
+        //public EncodingOptions b => new EncodingOptions() { Height = 300, Width = 300, PureBarcode = false, Margin = 10 };
         public ReceivePage(string receiveAddress)
         {
-            InitializeComponent();
+            BindingContext = this;
+           
+
+                InitializeComponent();
             address = receiveAddress;
-            NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
+            
 
         }
-        async Task<string> SetQrContent()
+        public static string GetWalletAddress()
         {
-            string QrContent = "Bitcoin:" + address;
-            if (amountTxt.Text != null)
-            {
-                QrContent += "?amount=" + addSigFigs(amountTxt.Text);
+            /* 
+             * 
+             * TODO:
+             * Fetch wallet address from file
+             *
+             */
 
-            }
-            if (txtBarcode.Text != null)
-            {
-                QrContent += "&label=" + txtBarcode.Text;
-            }
-            if (msgText.Text != null)
-            {
-                QrContent += "&message=" + msgText.Text;
-            }
-            Console.WriteLine(QrContent);
-            return QrContent;
+            return "WALLETADDRESS";
+            
         }
 
-        async void MyEntryChanged(TextChangedEventArgs e)
+        void UpdateQRLabel()
         {
-            //string bv = await SetQrContent();
+            string walletAddress = GetWalletAddress();
+            string amount = VeggieEntry.Text;
+            string label = Label.Text;
+            string message = Message.Text;
 
-
-                //QRCodeView = null;
-                QRCodeView = new ZXingBarcodeImageView
-                {
-                    BarcodeFormat = BarcodeFormat.QR_CODE,
-                    BarcodeOptions = new QrCodeEncodingOptions
-                    {
-                        Height = 150,
-                        Width = 150,
-                        PureBarcode = true
-                    },
-                    
-
-                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand
-                };
-                QRCodeView.IsVisible = true;
-            Device.BeginInvokeOnMainThread(async () =>
+            //no information
+            if (string.IsNullOrWhiteSpace(amount) && string.IsNullOrWhiteSpace(label) && string.IsNullOrWhiteSpace(message))
             {
-                QRCodeView.BarcodeValue = await SetQrContent();
-            });
+                QRString.Text = "VeggieCoin:WALLETADDRESS";
+                return;
+            }
+            //amount
+            if (!string.IsNullOrWhiteSpace(amount) && string.IsNullOrWhiteSpace(label) && string.IsNullOrWhiteSpace(message))
+            {
+                QRString.Text = "VeggieCoin:WALLETADDRESS" + "?amount=" + amount.Replace("V", "").Replace(" ", "");
+                return;
+            }
+            //label
+            if (string.IsNullOrWhiteSpace(amount) && !string.IsNullOrWhiteSpace(label) && string.IsNullOrWhiteSpace(message))
+            {
+                QRString.Text = "VeggieCoin:WALLETADDRESS" + "?label=" + label;
+                return;
+            }
+            //message
+            if (string.IsNullOrWhiteSpace(amount) && string.IsNullOrWhiteSpace(label) && !string.IsNullOrWhiteSpace(message))
+            {
+                QRString.Text = "VeggieCoin:WALLETADDRESS" + "?message=" + message;
+                return;
+            }
+            //amount and label
+            if (!string.IsNullOrWhiteSpace(amount) && !string.IsNullOrWhiteSpace(label) && string.IsNullOrWhiteSpace(message))
+            {
+                QRString.Text = "VeggieCoin:WALLETADDRESS" + "?amount=" + amount.Replace("V", "").Replace(" ", "") + "&label=" + label;
+                return;
+            }
+            //amount and message
+            if (!string.IsNullOrWhiteSpace(amount) && string.IsNullOrWhiteSpace(label) && !string.IsNullOrWhiteSpace(message))
+            {
+                QRString.Text = "VeggieCoin:WALLETADDRESS" + "?amount=" + amount.Replace("V", "").Replace(" ", "") + "&message=" + message;
+                return;
+            }
+            //label and message
+            if (string.IsNullOrWhiteSpace(amount) && !string.IsNullOrWhiteSpace(label) && !string.IsNullOrWhiteSpace(message))
+            {
+                QRString.Text = "VeggieCoin:WALLETADDRESS" + "?label=" + label + "&message=" + message;
+                return;
+            }
+            //label and amount and message
+            if (!string.IsNullOrWhiteSpace(amount) && !string.IsNullOrWhiteSpace(label) && !string.IsNullOrWhiteSpace(message))
+            {
+                QRString.Text = "VeggieCoin:WALLETADDRESS" + "?amount=" + amount.Replace("V", "").Replace(" ","") + "?label=" + label + "&message=" + message;
+                return;
+            }
+
+        }
+
+        public void Handle_Clicked(object sender, EventArgs e)
+        {
+            UpdateQRLabel();
+            BarcodeValue = QRString.Text;
+        }
+
+        async void VeggieEntryTextChanged(TextChangedEventArgs e)
+        {
+           
+            if (!VeggieEntry.Text.Contains("V"))
+            {
+                VeggieEntry.Text = "V " + VeggieEntry.Text;
+            }
+            if (VeggieEntry.Text.Length > 0)
+            {
+                USDEntry.Text = "$" + VeggieEntry.Text.Substring(1, VeggieEntry.Text.Length - 1);
+            }
+            UpdateQRLabel();
+
+
+        }
+
+        void OnTapped(object sender, EventArgs args)
+        {
+            Console.WriteLine("Click Event Received...");
+            VeggieEntry.Text = "";
+            USDEntry.Text = "";
+
         }
 
 

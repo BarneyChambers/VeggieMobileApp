@@ -3,16 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VeggieMobile21062018.SendPage">
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="150"/>
-                <RowDefinition/>
 
-            </Grid.RowDefinitions>
+        <StackLayout Margin="20,60,20,60">
             <Entry 
                 Grid.Row="0"
                 x:Name="paytoEntry"
@@ -24,27 +16,34 @@
                 Placeholder="Label"
                />
             <Entry 
+                Grid.Row="1"
+                x:Name="messageEntry"
+                Placeholder="Message"
+               />
+            <Entry 
                 Grid.Row="2"
                 x:Name="amountEntry"
+                Keyboard="Numeric"
+                TextChanged="TrimAmountEntry"
                 Placeholder="Amount"
                />
-
-            <Button
-                VerticalOptions="End"
-                Grid.Row="3"
-                x:Name="btnSend"
-                Clicked="sendByAddress"
-                Text="Send by address"
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button
+                    VerticalOptions="End"
+                    Grid.Row="3"
+                    x:Name="btnSend"
+                    Clicked="sendByAddress"
+                    Text="Send by address"
+                />
+                <Button
+                    VerticalOptions="End"
+                    Grid.Row="4"
+                    x:Name="btnScan"
+                    Clicked="scanButtonClicked"
+                    Text="Scan QR code"
             />
-            <Button
-                VerticalOptions="End"
-                Grid.Row="4"
-                x:Name="btnScan"
-                Clicked="scanButtonClicked"
-                Text="Scan QR code"
-            />
-
-
-        </Grid>
+            </StackLayout>
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

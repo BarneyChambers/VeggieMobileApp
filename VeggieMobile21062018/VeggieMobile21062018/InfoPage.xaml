@@ -4,9 +4,63 @@
              x:Class="VeggieMobile21062018.InfoPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal" Margin="60,20,60,20">
+                <Label
+                    Text="Hide Balance"   
+                    HorizontalOptions="FillAndExpand"
+                />
+                <Switch
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="True"
+                />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="60,20,60,20">
+                <Label
+                    Text="Hide Transaction History"   
+                    HorizontalOptions="FillAndExpand"
+                />
+                <Switch
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="True"
+                        
+                />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="60,20,60,20">
+                <Label
+                    Text="Language"   
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End"
+                />
+                <Picker HorizontalOptions="End" WidthRequest="50" x:Name="LangPicker" VerticalOptions="Start">                    
+                    <Picker.Items>
+                        <x:String>EN</x:String>
+                        <x:String>FR</x:String>
+                        <x:String>PT</x:String>
+                        <x:String>CH</x:String>
+                        <x:String>JP</x:String>
+                        <x:String>AR</x:String>
+                        <x:String>ES</x:String>
+                    </Picker.Items>
+                </Picker>
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="60,20,60,20">
+                <Label
+                    Text="Currency"   
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End"
+                />
+                <Picker HorizontalOptions="End" WidthRequest="50" x:Name="CurrencyPicker" VerticalOptions="Start">
+                    <Picker.Items>
+                        <x:String>USD</x:String>
+                        <x:String>GBP</x:String>
+                        <x:String>EUR</x:String>
+                        <x:String>YEN</x:String>
+                        <x:String>AUD</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
