@@ -117,14 +117,59 @@ namespace VeggieMobile21062018
 
         }
 
-        public void Handle_Clicked(object sender, EventArgs e)
+        public void Handle_Entry(object sender, EventArgs e)
         {
+
+            //Validate Amount and Change Colour
+            ColourStack.BackgroundColor = Color.LimeGreen;
+            if (VeggieEntry.Text != "")
+            {
+                if (VeggieEntry.Text.Replace("0", "").Replace(".", "") == "")
+                {
+                    ColourStack.BackgroundColor = Color.Red;
+                }
+            }
+            
+            //Sanitise Input: If it starts with 0 - it must have a . after
+            if (VeggieEntry.Text.Length >= 2)
+            {
+                if (VeggieEntry.Text[0] == '0' && Char.IsDigit(VeggieEntry.Text[1]))
+                {
+                    VeggieEntry.Text = "0.";
+                }
+            }
+
+            //Check 8 Significant figures and Change Colour
+            if (VeggieEntry.Text.Contains("."))
+            {
+                if (VeggieEntry.Text.Length - VeggieEntry.Text.IndexOf(".") - 1 > 8)
+                {
+                    ColourStack.BackgroundColor = Color.Red;
+                }
+
+            }
+
+            //Check Label is Under 100 Chars, Update Colour
+            if (Label.Text.Length > 100)
+            {
+                ColourStack.BackgroundColor = Color.Red;
+            }
+
+            //Check Message is Under 100 Chars, Update Colour
+            if (Message.Text.Length > 100)
+            {
+                ColourStack.BackgroundColor = Color.Red;
+            }
+
             UpdateQRLabel();
             BarcodeValue = QRString.Text;
+            PayAmount.Text = "Payment Amount: " + VeggieEntry.Text.Replace("V", "") + " VEGI";
+
         }
 
         async void VeggieEntryTextChanged(TextChangedEventArgs e)
         {
+            
            
             if (!VeggieEntry.Text.Contains("V"))
             {
@@ -135,7 +180,6 @@ namespace VeggieMobile21062018
                 USDEntry.Text = "$" + VeggieEntry.Text.Substring(1, VeggieEntry.Text.Length - 1);
             }
             UpdateQRLabel();
-
 
         }
 

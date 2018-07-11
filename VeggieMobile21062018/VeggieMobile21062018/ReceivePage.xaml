@@ -11,14 +11,18 @@
                    
                 <Label
                     Margin="20,20,20,20"
-                    Text="Request an amount (Optional)"
+                    Text="Generate a Payment Request That the Sender Can Scan"
+                    HorizontalTextAlignment="Center"
+                    FontSize="20"
                     TextColor="Black"
-                   
+                    HorizontalOptions="Center"
+                    BackgroundColor="#F5F5F5"
                 />
             <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="20,0,20,0">
                 <Entry
+                    Text=""
                     x:Name="VeggieEntry"
-                    TextChanged="Handle_Clicked"
+                    TextChanged="Handle_Entry"
                     Keyboard="Numeric"
                     Placeholder="VEGI 0.00000000"  
                     HorizontalOptions="FillAndExpand"
@@ -31,6 +35,7 @@
                     </Entry.GestureRecognizers>
                 </Entry>
                 <Entry
+                    Text=""
                     x:Name="USDEntry" 
                     Placeholder="$ 0.00"
                     Keyboard="Numeric"
@@ -48,40 +53,55 @@
 
             <StackLayout BackgroundColor="White" Orientation="Horizontal" Margin="20,0,20,20">
                 <Entry
+                    Text=""
                     x:Name="Label" 
                     Placeholder="Label (Optional)"  
                     HorizontalOptions="FillAndExpand"
-                    TextChanged="Handle_Clicked"
+                    TextChanged="Handle_Entry"
                     WidthRequest="50"
                     FontAttributes="Bold"
             
                 />
                 <Entry
+                    Text=""
                     x:Name="Message" 
                     Placeholder="Message (Optional)"  
                     HorizontalOptions="FillAndExpand"
-                    TextChanged="Handle_Clicked"
+                    TextChanged="Handle_Entry"
                     WidthRequest="50"
                     FontAttributes="Bold"
                 />
             </StackLayout>
-                <StackLayout BackgroundColor="LightGray" Orientation="Horizontal" Margin="20,0,20,20">
-                    <StackLayout>
+            <StackLayout BackgroundColor="#F5F5F5" Orientation="Horizontal" Margin="20,0,20,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0">
                         <Label
                             Margin="5,5,5,5"
                             Text="Have this code scanned by the sender:"  
                             HorizontalOptions="FillAndExpand"
                             WidthRequest="200"
                         />
-                    <Label
+                        <Label
                             Margin="5,5,5,5"
                             Text="The QR code holds all information required for the sender to make a payment to your mobile wallet"  
                             HorizontalOptions="FillAndExpand"
                             WidthRequest="200"
                         />
-                </StackLayout>
-
-                    <StackLayout>
+                        <Label
+                            x:Name="PayAmount"
+                            Margin="5,5,5,5"
+                            Text="Payment Amount:"  
+                            HorizontalOptions="Start"
+                            FontSize="10"
+                            FontAttributes="Bold"
+                        
+                        />
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" BackgroundColor="LimeGreen" x:Name="ColourStack">
                         <forms:ZXingBarcodeImageView 
                             Margin="5,5,5,0"
                             IsVisible="True"
@@ -98,31 +118,27 @@
                             Text="VeggieCoin:WALLETADDRESS"
                             x:Name="QRString"
                             BackgroundColor="White"
-                            Margin="40,0,5,5"
-                            HorizontalOptions="End"
+                            Margin="0,0,0,10"
+                            HorizontalOptions="Center"
                             FontSize="7"
                         />
-                </StackLayout>
-                
-                </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
             <Label
-                Margin="20,0,20,20"
-                HorizontalOptions="Center"
-                VerticalOptions="End"
-                Text="ATTENTION!"
-                TextColor="Red"
-                FontAttributes="Bold"
-                FontSize="8"
-
-                />
-            <Label
-                Margin="20,0,20,20"
+                Margin="20,0,20,0"
                 HorizontalOptions="Start"
-                HorizontalTextAlignment="End"
                 VerticalOptions="End"
-                Text="Lost or stolen funds can not be retreived by the network. Before clicking send, please ensure you are sending your funds to the right place."
+                Text="Attention:"
+                TextColor="Red"
+            />
+            <Label
+                Margin="20,0,20,20"
+                VerticalOptions="End"
+                VerticalTextAlignment="End"
+                Text="Lost or stolen funds can not be retreived by the network. Before sending funds, please ensure you are sending them to the right place."
                 TextColor="Gray"
-                />
+            />
         </StackLayout>
 
     </ContentPage.Content>
