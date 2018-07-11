@@ -95,7 +95,7 @@
                             BarcodeValue="{Binding BarcodeValue}" 
                         />
                         <Label
-                            Text="Veggie:address=WalletAddress/amount=10?label=/?message=/"
+                            Text="VeggieCoin:WALLETADDRESS"
                             x:Name="QRString"
                             BackgroundColor="White"
                             Margin="40,0,5,5"

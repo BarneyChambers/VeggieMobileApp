@@ -19,7 +19,7 @@ namespace VeggieMobile21062018
     {
         public string address;
         private Random _random = new Random();
-        private string _barcodeValue = "-1";
+        private string _barcodeValue = "VeggieCoin:WALLETADDRESS";
 
         public string BarcodeValue
         {
