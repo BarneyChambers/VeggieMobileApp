@@ -9,11 +9,16 @@ namespace VeggieMobile21062018
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SendPage : ContentPage
     {
-        public SendPage()
+        public SendPage(ZXing.Result result)
         {
             InitializeComponent();
-
+            if (result!=null)
+            {
+                checkResult(result.ToString());
+            }
         }
+
+        string checkResult(string resultString) { return "-1" ; }
 
         void TrimAmountEntry()
         {
@@ -23,7 +28,7 @@ namespace VeggieMobile21062018
             }
         }
 
-        async void scanButtonClicked()
+        async void doScan()
         {
             try
             {

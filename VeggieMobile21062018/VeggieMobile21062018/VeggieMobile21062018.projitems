@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Brazio.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GetInfoObj.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)InfoPage.xaml.cs">
       <DependentUpon>InfoPage.xaml</DependentUpon>

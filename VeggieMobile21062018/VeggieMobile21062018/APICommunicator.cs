@@ -75,5 +75,7 @@ namespace VeggieMobile21062018
             return "-1";
         }
 
+        //public async Task<string> BlockchainGetBalance(string address) { }
+
     }
 }

@@ -15,8 +15,11 @@ namespace VeggieMobile21062018
 	public partial class MainPage : ContentPage
 	{
         string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-        Network network = NBitcoin.Altcoins.Veggiecoin.Instance.Mainnet;
+        //Network network = NBitcoin.Altcoins.Veggiecoin.Instance.Mainnet;
+        Network brazNetwork = NBitcoin.Altcoins.Brazio.Instance.Mainnet;
         Key key;
+        Key brazKey;
+
         GetInfoObj getInfoObj;
         public MainPage()
 		{
@@ -26,9 +29,12 @@ namespace VeggieMobile21062018
             //Console.WriteLine(key.PubKey.GetAddress(network));
             //Console.WriteLine(key.GetBitcoinSecret(network));
             //Console.WriteLine("BITCOIN SECRET: " + key.GetWif(network).ToString() + "\n");
+            brazKey = new Key();
+            string brazAddress = brazKey.PubKey.GetAddress(brazNetwork).ToString();
+
             key = GetKeyFromWif();
-            var address = key.PubKey.GetAddress(network);
-            
+            string address = GetAddressFromFile();
+                        
             if (transactionList.ItemsSource == null)
             {
                 List <transactionItem> l = new List<transactionItem>();
@@ -66,14 +72,14 @@ namespace VeggieMobile21062018
         //Gets the WIF from the user's mobile phone at wif.txt. If it doesn't exist, make a new wif.
         Key GetKeyFromWif()
         {
-            string filename = Path.Combine(path, "wif.txt");
+            string filename = Path.Combine(path, "brazwif.txt");
             string savedWif = "-1";
             try
             {
                 using (var streamReader = new StreamReader(filename))
                 {
                     savedWif = streamReader.ReadToEnd();
-                    Key key = Key.Parse(savedWif.Substring(0, savedWif.Length - 1), network);
+                    Key key = Key.Parse(savedWif.Substring(0, savedWif.Length - 1), brazNetwork);
 
                     return key;
                 }
@@ -84,7 +90,7 @@ namespace VeggieMobile21062018
                 Key key = new Key();
                 using (var streamWriter = new StreamWriter(filename, true))
                 {
-                    string newWif = key.GetWif(network).ToString();
+                    string newWif = key.GetWif(brazNetwork).ToString();
                     streamWriter.WriteLine(newWif);
                     return key;
                 }
@@ -96,22 +102,39 @@ namespace VeggieMobile21062018
             }
         }
 
-        void ReceivePageClicked(EventArgs e)
+        string GetAddressFromFile()
         {
-            string receiveAddress = key.PubKey.GetAddress(network).ToString();
-            Navigation.PushAsync(new ReceivePage(receiveAddress));
-        }
-        void SendPageClicked(EventArgs e)
-        {
-            Navigation.PushAsync(new SendPage());
-        }
-        async void SettingPageClicked(EventArgs e)
-        {
-            APICommunicator a = new APICommunicator();
-            string s = await a.BlockchainGetInfo();
-            GetInfoObj g = getInfoDeserialized(s);
+            string filename = Path.Combine(path, "brazaddress.txt");
+            string address ="-1";
 
-            await Navigation.PushAsync(new InfoPage(g));
+            try
+            {
+                using (var streamReader = new StreamReader(filename))
+                {
+                    address = streamReader.ReadToEnd();
+                    address = address.Substring(0, address.Length - 1);
+
+                    return address;
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine("ERROR: " + ex);
+                Key key = GetKeyFromWif();
+                
+                using (var streamWriter = new StreamWriter(filename, true))
+                {
+                    address = key.PubKey.GetAddress(brazNetwork).ToString();
+                    streamWriter.WriteLine(address);
+                    return address;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Unknown error: " + ex);
+            }
+
+            return address;
         }
     }
 }

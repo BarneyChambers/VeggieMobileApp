@@ -39,7 +39,6 @@
                     VerticalOptions="End"
                     Grid.Row="4"
                     x:Name="btnScan"
-                    Clicked="scanButtonClicked"
                     Text="Scan QR code"
             />
             </StackLayout>

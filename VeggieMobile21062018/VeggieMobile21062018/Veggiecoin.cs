@@ -15,7 +15,7 @@ namespace NBitcoin.Altcoins
     {
         public static Veggiecoin Instance { get; } = new Veggiecoin();
 
-        public override string CryptoCode => "LTC";
+        public override string CryptoCode => "VEGI";
 
         private Veggiecoin()
         {
